@@ -1,2 +1,5 @@
-# web-231
-Learning the fundamental concepts of the JavaScript language.
+WEB 231 Enterprise JavaScript I
+
+Contributors
+Instructor Name: Professor Krasso
+Student Name: Soliman Abdelmalak
