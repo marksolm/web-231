@@ -1,0 +1,64 @@
+/**
+Title: site.css
+Author: Soliman Abdelmalak
+Date: 01/10/2021
+Description: Styling for the index.html file
+*/
+
+/**
+HTML and the body font-family set to the  Google font.
+*/
+html,body{
+ font-family:'Oswald',Verdana, Arial, sans-serif; 
+}
+/**
+This is the setup margins for #container.
+*/
+#container{
+  margin-top: 50px ;
+  margin-left: 100px;
+  margin-right: 100px;
+ }   
+/**
+These are the setup for the h1, h2, h3, and h4 tags.
+*/
+ h1, h2, h3, h4{
+  background-color:#3C275A;
+  color: white; 
+  border: solid 1px;
+  border-color: #D6A800;
+  padding: 10px;
+ }
+/**
+These are the Setup of the anchor tags.
+*/
+a{
+  color:#453674;
+  text-decoration: none;
+}
+/**
+These are the Set of the anchor tag’s hover
+*/
+a:hover {
+ background-color:#D6A800;
+ color:#4F3674 ;
+}
+.return-home{
+  color: #4f3674;
+  text-decoration: none;
+} 
+.return-home:hover{
+  background-color: #d6a800;
+  color: #4f3674;
+}
+/* a red color and a dotted border fot the unorder list */
+#record{
+  border: 1px dotted;
+  border-color: red;
+}
+/* visited link */
+.return-home:visited {
+  color:#3c275a;
+  .btnMyCourse{
+    border-style: none;
+  }

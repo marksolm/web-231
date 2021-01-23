@@ -1,0 +1,99 @@
+/**
+Title: Abdelmalak-temp-conversion.css
+Author: Soliman Abdelmalak
+Date: 01/21/2021
+Description: Styling for the Abdelmalak-temp-conversion.html file
+*/
+/**
+HTML and the body font-family set to the  Google font.
+*/
+html,body{
+  
+    font-family:'Oswald',Verdana, Arial, sans-serif; 
+    text-align: center;
+    font-size: 28px;
+   }
+   
+   /**
+   These are the Setup of the anchor tags.
+   */
+ 
+   #return-home{
+     color: #4f3674;
+     text-decoration: none;
+     text-align: right;
+   } 
+   #return-home:hover{
+     background-color: #d6a800;
+     color: #4f3674;
+   }
+ 
+   These are the setup for 
+
+h2, #card-title{
+    color:#3c275a;
+    font-weight: 400;
+/**
+This is the setup margins for #container.
+*/
+ }
+#container{
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 10px;
+  bottom: 100px;
+}
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0.2);
+  width: 100%;
+  color: #3c275a;
+}
+/**
+  This is the setup  for h2 and p tags.
+  */
+.card-title{
+  text-align: center;
+  color: #4F3674;
+}
+.card-content{
+  padding: 2px 16px;
+}
+/**
+  This is the setup  for label and input tags.
+  */
+  .form {
+    padding: 20px;
+    display: inline-grid;
+    grid-template-columns: auto;
+  }
+  .form-field{
+    color: black;
+    
+  }
+  /**
+  This is the setup  for the button.
+  */
+  .btn {
+    border: none;
+    background-color: #4F3674;
+    color: white;
+    padding: 15px 32px;
+    width: 100%;
+  }    
+  
+  /**
+  This is the setup  for h1.
+  */
+    .app-header{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0.2);
+    width: 90%;
+    display: inline-grid;
+    grid-template-columns: auto;
+    }
+    /**
+  This is the height setup  for input.
+  */
+    input{
+         height: 30px;   
+    }

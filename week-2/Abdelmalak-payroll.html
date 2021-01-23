@@ -1,0 +1,127 @@
+<!-- Title: Abdelmalak-payroll.html
+     Author: Soliman Abdelmalak
+     Date: 01/16/2021
+     Description:Description: This is a page linked to the WEB 231 landing site under the weekly assignments list for  Exercise 2.3.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <!-- These are the meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learning the fundamental concepts of the JavaScript language" />
+    <meta name="keywords" content="CSS, HTML, Web Development, Enterprise JavaScript I" />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="Professor Krasso">
+     <!-- this is an internal link for stylesheet. -->
+    <link href="../site.css" type="text/css" rel="stylesheet">
+    <!-- this is an external link for the google fonts. -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <!-- This is the beginning of the body. -->
+  <body>
+    <div id="container"> 
+       <h1 id="payroll-header">Payroll System</h1>
+       <h3>Employee record 1</h3>
+         <!-- This is an unordered list for the weekly assignments links. -->
+        <div id="record">
+          <ul>
+            <li id="txt_a">FirstName</li>
+            <li id="txt_b">lastName</li>
+            <li id="txt_c">address</li>
+            <li id="txt_d">hireDate</li>
+            <li id="txt_e">payRate</li>
+         </ul>
+         
+            <h3>Employee record 2</h3>
+            <!-- This is an unordered list for the weekly assignments links. -->
+             <ul>
+               <li id="txt_f">FirstName</li>
+               <li id="txt_g">lastName</li>
+               <li id="txt_h">address</li>
+               <li id="txt_i">hireDate</li>
+               <li id="txt_j">payRate</li>
+            </ul>
+            <h3>Employee record 3</h3>
+            <!-- This is an unordered list for the weekly assignments links. -->
+             <ul>
+               <li id="txt_k">FirstName</li>
+               <li id="txt_l">lastName</li>
+               <li id="txt_m">address</li>
+               <li id="txt_n">hireDate</li>
+               <li id="txt_o">payRate</li>
+            </ul>
+        </div>
+         <script>
+          / variables
+           const FirstName = ''
+           const lastName = ''
+           const address = ''
+           const payRate = ''
+           const hireDate = ''
+
+           const FirstName = ''
+           const lastName = ''
+           const address = ''
+           const payRate = ''
+           const hireDate = ''
+
+           const FirstName = ''
+           const lastName = ''
+           const address = ''
+           const payRate = ''
+           const hireDate = ''
+           
+           const payRate = payRate.toFixed(1);
+           // variables
+           let date = new Date()
+           let now = date.toLocaleDateString()
+           let nowV2 = date.toLocaleDateString('en-US')
+
+           // output
+          console.log(' -- DATE WITH DASHES --')
+          console.log(now)
+
+          console.log('') // new line
+
+          console.log(' -- DATE WITH SLASHES --')
+          console.log(nowV2)
+         
+
+          function getInnerText() {
+           document.getElementById("txt_a").innerHTML = FirstName;
+           document.getElementById("txt_b").innerHTML = lastName;
+           document.getElementById("txt_c").innerHTML = address;
+           document.getElementById("txt_d").innerHTML = hireDate;
+           document.getElementById("txt_e").innerHTML = payRate;
+           document.getElementById("txt_f").innerHTML = FirstName;
+           document.getElementById("txt_g").innerHTML = lastName;
+           document.getElementById("txt_h").innerHTML = address;
+           document.getElementById("txt_i").innerHTML = hireDate;
+           document.getElementById("txt_j").innerHTML = payRate
+           document.getElementById("txt_k").innerHTML = FirstName;
+           document.getElementById("txt_l").innerHTML = lastName;
+           document.getElementById("txt_m").innerHTML = address;
+           document.getElementById("txt_n").innerHTML = hireDate;
+           document.getElementById("txt_o").innerHTML = payRate;
+          }
+          
+            // output
+            console.log(FirstName)
+            console.log(lastName)
+            console.log(address)
+            console.log(hireDate)
+            console.log(payRate)
+         </script>
+         <!-- this is an internal link to the landing page index. -->
+         <p> <a class="return-home" href="../index.html">Return</a></p>
+
+          
+
+    </div>
+  </body>
+</html>
+

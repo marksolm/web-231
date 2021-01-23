@@ -1,0 +1,72 @@
+<!-- Title: Abdelmalak-temp-conversion.html
+     Author: Soliman Abdelmalak
+     Date: 01/21/2021
+     Description:Description: This is a page linked to the WEB 231 landing site under the weekly assignments list for Assignment 3.2.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <!-- These are the meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learning the fundamental concepts of the JavaScript language" />
+    <meta name="keywords" content="CSS, HTML, Web Development, Enterprise JavaScript I" />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="Professor Krasso">
+     <!-- this is an internal link for stylesheet. -->
+    <link href="./Abdelmalak-temp-conversion.css" type="text/css" rel="stylesheet">
+    <!-- this is an external link for the google fonts. -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <!-- This is the beginning of the body. -->
+  <body>
+     <header>
+      <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
+     </header> 
+       <!-- This is the main div to the body that giving CSS # container. -->
+    <div id="container">
+       <div class="card">
+               <!-- This is the main div for h2 tag. -->
+          <div 
+            class="card-title"><h2>Fahrenheit to Celsius Converter</h2>
+          </div>
+          <div class="card-content">
+                   <!-- This is  div content label, input, and button tags. -->
+            <div class="form">
+              <div class=" form-field">
+                <label>Fahrenheit Value</label>
+                <input type="number" id="textFahrenheit" name="Fahrenheit Value"><br>
+              </div>
+                  <div class="form-field">
+                     <button type="button" id="button" class="btn">Convert Temperature</button> 
+                   </div>
+          </div>
+        </div>
+      </div>
+         <br />
+                <!-- This is  div has .card and #card-title for the set up for 'Conversion Results' text-->
+           <div class="card">
+             Conversion Results
+              <p id="card-title"></p>
+           </div>
+                    <!-- this is the beginning of Javascript  -->
+          <script>
+                  document.getElementById("button").addEventListener("click", convertTemperature);
+                   function convertTemperature() {
+                    const fahrenheit = document.getElementById("textFahrenheit").value;
+                    const converterC = parseFloat(((fahrenheit) - 32) / 1.8).toFixed(2);
+                    document.getElementById("card-title").innerHTML = converterC;
+                 }
+           </script>
+         <br />
+         <!-- this is an internal link to the landing page index. -->
+         <p> <a id="return-home" href="../index.html">Return</a></p>
+     </div>
+  </body>
+</html>
+
+
+
