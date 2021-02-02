@@ -1,0 +1,84 @@
+/**
+Title: Abdelmalak-number-game.css
+Author: Soliman Abdelmalak
+Date: 01/30/2021
+Description: Styling for the Abdelmalak-number-game.html file
+*/
+ /**
+ HTML and the body font-family set to the  Google font.
+ */
+   body{
+     font-family:'Oswald',Verdana, Arial, sans-serif; 
+     font-size: 28px;
+     text-align: center;
+   }
+   
+    /**
+    These are the Setup of the anchor tags.
+    */
+   #return-home{
+     color: #4f3674;
+     text-decoration: none;
+     text-align: right;
+   } 
+   /**
+   These are the Set of the anchor tag’s hover
+   */
+    #return-home:hover{
+       background-color: #d6a800;
+       color: #4f3674;
+    }
+   /**
+   This is the color and the font-weight for h2 and #card-title. 
+   */
+    label, #card-title{
+      color:black;
+    }
+    /**
+    This is the setup margins for #container.
+    */
+    .card{
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0.2);
+           color: #3c275a;
+           padding: 1px;
+           display: inline-grid;
+           grid-template-columns: auto;
+           width: 60%;
+           margin-bottom: 50px;
+           text-align: center;
+     }
+    /**
+    This is the display, color, and padding  setup for h3.
+    */
+   .title{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0.2);
+            color: #3c275a;
+            padding: 1px;
+            display: inline-block;
+            grid-template-columns: auto;
+            width: 60%;
+         }
+    
+     /**
+     This is the setup  for h1.
+     */
+     .app-header{
+                  font-weight: 500;
+       }
+     /**
+      This is the height setup  for input.
+     */
+       input{
+         height: 30px;   
+       }
+       /**
+      This is the setup  for the input button.
+      */
+     #btnSubmit{
+                  border: none;
+                  background-color: #4F3674;
+                  color: white;
+                  padding: 15px 32px;
+                  width: 40%;
+                  height: 45px;
+               }   

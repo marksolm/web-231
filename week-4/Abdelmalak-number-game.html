@@ -1,0 +1,86 @@
+
+<!-- Title: Abdelmalak-number-game.html
+     Author: Soliman Abdelmalak
+     Date: 01/30/2021
+     Description:Description: This is a page linked to the WEB 231 landing site under the weekly assignments list for  Exercise 2.2.
+.
+-->
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+        <!-- These are the meta tags -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="Learning the fundamental concepts of the JavaScript language" />
+     <meta name="keywords" content="CSS, HTML, Web Development, Enterprise JavaScript I" />
+     <meta name="robots" content="nofollow" />
+     <meta name="author" content="Professor Krasso">
+     <title>WEB 231 – Enterprise JavaScript</title>
+     <!-- this is an internal link for stylesheet. -->
+     <link href="./Abdelmalak-number-game.css" type="text/css" rel="stylesheet">
+     <!-- this is an external link for the google fonts. -->
+     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+   </head>
+   <body>
+     <!-- This is the beginning of the body. -->
+     <header>
+       <h1 class="app-header">Welcome to the numbers game!</h1>
+     </header>
+     <!-- This is the main div for form contents. -->
+      <div class="card"> 
+         <h2>Pick a number between 1 and 10</h2>
+         <form>
+           <label>Guess the number</label>
+           <input type="number" id="textMyNumber" onfocus="select()"> <br /> <br />
+           <input type="button" id="btnSubmit" value="Submit">
+         </form>
+      </div>
+       <!-- This is the title div class. -->
+         <div class="title">
+           <h3>Results</h3>
+           <p id="card-title"></p>
+         </div>
+             <br />
+              <!-- this is an internal link to the landing page index. -->
+             <p> <a id="return-home" href="../index.html">Return</a></p>
+              <!-- this is the beginning of Javascript  -->
+                 <script>
+                   // button.addEventListener(click);
+                    document.getElementById("btnSubmit").addEventListener("click", MyGuess);
+                    // random value generated 
+                    const rnd = Math.floor((Math.random() * 10) + 1);
+                    // counting the number of guesses 
+                    // made for correct Guess 
+                     var Guess = 1; 
+                     function MyGuess() {
+                         if (document.getElementById('btnSubmit').value=="Submit"){
+                           // number guessed by user      
+                           let myNumber = document.getElementById('textMyNumber').value;
+                           /* if guessed number is matching 
+                           than actual number*/ 
+                           if(myNumber === rnd){
+                                document.getElementById('card-title').innerHTML= "Congratulation! you pick the correct number!";
+                             }  
+                               /* if guessed number is greater 
+                               than actual number*/  
+                               if(myNumber > rnd){
+                                   Guess++;
+                                    document.getElementById('card-title').innerHTML = ("The number is less than " + myNumber);
+                                    /* if guessed number is lesser 
+                                    than actual number*/ 
+                                 }else{
+                                      Guess++;
+                                      document.getElementById('card-title').innerHTML = ("The number is greater than " + myNumber);
+                                   }
+                             
+                              }else
+                               {
+                               document.getElementById('textMyNumber').focus();
+                               document.getElementById('card-title').innerHTML=" ";
+                               document.getElementById('textMyNumber').innerHTML=" ";
+                               document.getElementById('btnSubmit').value="Submit";
+                          }
+                      } 
+                 </script>
+   <body>
+</html>
