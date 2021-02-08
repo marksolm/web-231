@@ -1,0 +1,105 @@
+<!-- Title: Abdelmalak-sequence-game.html
+     Author: Soliman Abdelmalak
+     Date: 02/06/2021
+     Description:Description: This is a page linked to the WEB 231 landing site under the weekly assignments list for  Assignment 5.2.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- These are the meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning the fundamental concepts of the JavaScript language" />
+    <meta name="keywords" content="CSS, HTML, Web Development, Enterprise JavaScript I" />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="Professor Krasso">
+    <title>WEB 231 – Enterprise JavaScript</title>
+    <!-- this is an internal link for stylesheet. -->
+    <link href="./Abdelmalak-sequence-game.css" type="text/css" rel="stylesheet">
+    <!-- this is an external link for the google fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- This is the beginning of the body. -->
+    <header>
+        <h1 class="app-header">Welcome to the sequence game!</h1>
+      </header>
+      <!-- This is the main div for form contents. -->
+       <div class="card"> 
+          <h2>Sequence Selection Form</h2>
+            <form>
+                 <label>Choose a number sequence</label>
+                     <select name="sequence" id="Sequence" class="drop-down-menu">
+                         <option value="select">--Select--</option>
+                          <option value="fibonacci">Fibonacci Sequence</option>
+                         <option value="even">Even Numbers</option>
+                         <option value="odd">Odd Numbers</option>
+                     </select>    
+                     <br /> <br />       
+                <input type="button" onclick="IfNumberSequence()" id="btnDisplaySequence" value="display Sequence">
+            </form>
+       </div>
+        <!-- This is the title div class. -->
+          <div class="title">
+            <h3>Sequence Results</h3>
+            <p id="card-title"></p>
+          </div>
+              <br />
+               <!-- this is an internal link to the landing page index. -->
+              <p> <a id="return-home" href="../index.html">Return</a></p>
+               <!-- this is the beginning of Javascript  -->
+               <script>
+                   //This is the beginning of the function.
+            function IfNumberSequence() {
+                //This  the variable that capture the value from the selected list.
+                let choice = document.getElementById("Sequence").value;
+                //If Fibonacci is chosen.
+                if (choice == "fibonacci") {
+                    // variables hold num1, num2,next,and fibonacciSequenceText.
+                    let num1 = 0;
+                    let num2 = 1;
+                    let next;
+                    let fibonacciSequenceText = "";
+                    // starting of the while loop.
+                    while (num1 < 40)
+                    {
+                        fibonacciSequenceText += num1 + ", ";
+                        next = num1 + num2;
+                        num1 = num2;
+                        num2 = next;
+                    }
+                    //Bind the Fibonacci sequence to the card-title. 
+                    document.getElementById("card-title").innerHTML = fibonacciSequenceText.slice(0, -2);
+                } else if (choice == "even") {
+                    //variables hold num1, num2,next.
+                                     let evenSequence = "";
+                                 for (let num1=1; num1<20; num1++){
+                                      if(num1 % 2 === 0) {
+                                      evenSequence += num1 + ", ";
+                                 }  
+                }
+                    //Bind the even numbers to the card-title. 
+                    document.getElementById("card-title").innerHTML = evenSequence.slice(0, -2);
+                //If the odd sequence is chosen, a for loop will give the sequence less than 20.
+                } else if (choice == "odd") {
+                    //Start of the for loop,and Defines the  odd variable.
+                    let oddSequence = "";
+                    for (let num1 = 1; num1 < 20; num1 += 2) {
+                        if ((num1 % 2) == 0); {
+                            oddSequence += num1 + ", ";
+                        }
+                    }
+                    //Bind the Odd sequence to the card-title.
+                    document.getElementById("card-title").innerHTML = oddSequence.slice(0, -2);
+
+                } else {
+                    alert("Invalid selection, please try again!")
+                }
+
+
+            }
+
+              </script>
+    
+</body>
+</html>
