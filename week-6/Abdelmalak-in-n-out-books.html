@@ -1,0 +1,194 @@
+<!-- Title: Abdelmalak-in-n-out-books.html
+     Author: Soliman Abdelmalak
+     Date: 02/12/2021
+     Description:Description: This is a page linked to the WEB 231 landing site under the weekly assignments list for  Assignment 6.2.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- These are the meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning the fundamental concepts of the JavaScript language" />
+    <meta name="keywords" content="CSS, HTML, Web Development, Enterprise JavaScript I" />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="Professor Krasso">
+    <title>WEB 231 – Enterprise JavaScript</title>
+    <!-- this is an internal link for stylesheet. -->
+    <link href="./Abdelmalak-in-n-out-books.css" type="text/css" rel="stylesheet">
+    <!-- this is an external link for the google fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- This is the beginning of the body. -->
+    <div >
+        <header>
+         <h1 class="app-header">Welcome to In-N-Out-Books</h1>
+       </header>
+      <!-- This is the main div for form contents. -->
+       <div class="card-title"> 
+          <h2>My Favorites</h2>
+            <form>
+                    <!-- This is the drop down menu. -->
+                 <label>Choose a listing</label>
+                     <select name="favoriteList" id="favoriteList" class="drop-down-menu">
+                         <option value="select">--Select--</option>
+                          <option value="books">Top 3 Favorite Books</option>
+                         <option value="authors">Top 3 Favorite Authors</option>
+                     </select>    
+                     <br /> <br />       
+                <input type="button" onfocus="select()" id="btnDisplaySequence"  value="Display Listing">
+
+            </form>
+       </div>
+                  <!-- this is an internal link to the landing page index. -->
+                   <div> <a id="return-home" href="../index.html">Return</a></div>
+                  <!-- This is the Results div class. -->
+                   <div class="card-title" id="topBooks">
+                        <div class="Top3">Top 3 Favorite Books</div>
+                         <!-- This is the Favorite Books table header. -->
+                               <table>
+                                        <tr>
+                                            <th>Isbn</th>
+                                            <th>Title</th>
+                                            <th>Pages</th>
+                                        </tr>
+                                       <!--This is three rows for the Favorite Books table data.-->
+                                     <tbody>
+                                         <tr>
+                                              <td id="txtGodWthManISBN"></td>
+                                              <td id="txtGodAndManTitle"></td>
+                                             <td id="txtManPages"></td>
+                                         </tr>
+                                          <tr>
+                                             <td id="txtBuildWebsitesISBN"></td>
+                                             <td id="txtHTML-CSSDesignTitle"></td>
+                                             <td id="txtDesignPages"></td>
+                                         </tr>
+                                         <tr>
+                                             <td id="txtJavaScriptISBN"></td>
+                                             <td id="txtTheDefinitiveGuide"></td>
+                                             <td id="txtGuidePages"></td>
+                                         </tr>
+                                     </tbody>                  
+                                </table>
+                    </div>
+                         <!-- This is the Results div class for the second table. -->
+                       <div class="card-title" id="topAuthors">
+                           <div class="Top3">Top 3 Favorite Authors</div>
+                                     <!-- This is the favorite authors table header. -->
+                                        <table>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Genre</th>
+                                                </tr>
+                                              <!--This is three rows for the favorite authors table data.-->
+                                            <tbody>
+                                                <tr>
+                                                     <td id="txtName"></td>
+                                                     <td id="txtSpiritualGenre"></td>
+                                                </tr>
+                                                <tr>
+                                                      <td id="txtJonName"></td>
+                                                      <td id="txtScienceFictionGenre"></td>
+                                                </tr>
+                                                <tr>
+                                                      <td id="txtDavidFlanaganName"></td>
+                                                      <td id="txtFictionGenre"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                       </div>
+              
+               <!-- this is the beginning of Javascript  -->
+            <script>
+                    //These are three variables for my favorite books
+                    let book1 = 
+                       { 
+	                       isbn : "9780995363427",
+	                       title : "God and Man",
+                	       pages : "330",
+                       }
+                       let book2 =
+                           { 
+	                           isbn : "9781118008188",
+	                           title : "HTML&CSS design and build websites",
+                	           pages : "490",
+                           }
+                          let book3 =
+                            { 
+	                           isbn  : "9781491952023",
+	                           title : "JavaScript The Definitive Guide",
+                	          pages : "687",
+                           }
+                        
+                     //These are three variables for my favorite authors
+                    let author1  = 
+                        { 
+	                         name : "Pope Shenouda III",
+	                         genre : "Spiritual",
+                        }
+                            let author2  = 
+                                { 
+                                  name : "Jon Duckett",
+	                              genre : "Science Fiction",
+                               }
+                                let author3 = 
+                                    { 
+                                      name : "David Flanagan",
+	                                  genre : "Science Fiction",
+                                    };
+                                    //This is a books variable for the topBooks div"
+                                    let books = document.getElementById("topBooks");
+                                        //This is the books style.display to none.
+                                      document.getElementById("topBooks").style.display = "none";
+                                     //This is a authors variable for the topAuthors div"
+                                    let authors = document.getElementById("topAuthors");
+                                     //This is the authors style.display to none.
+                                      document.getElementById("topAuthors").style.display = "none";
+                                      //This is the register an onclick event for the button.
+                                      document.getElementById("btnDisplaySequence").addEventListener("click", myFavoritesList);
+                    function myFavoritesList() {
+                       let choice = document.getElementById("favoriteList").value;  
+                            //if the user selected the books list .
+                           if (choice == "books") {
+                             authors.style.display = "none";
+                             books.style.display = "block";
+                            //if the user selected the authors list .
+                           } else if (choice == "authors") {
+                              books.style.display = "none";
+                              authors.style.display = "block"; 
+                             //if the user selected the select list .
+                           } else{
+                                books.style.display = "none";
+                                authors.style.display = "none"; 
+                              }
+                               //Bind the three favorite books object to Html table .
+                      document.getElementById("txtGodWthManISBN").innerHTML = book1.isbn;
+                      document.getElementById("txtGodAndManTitle").innerHTML = book1.title;
+                      document.getElementById("txtManPages").innerHTML = book1.pages;
+                      document.getElementById("txtBuildWebsitesISBN").innerHTML = book2.isbn;
+                      document.getElementById("txtHTML-CSSDesignTitle").innerHTML = book2.title;
+                      document.getElementById("txtDesignPages").innerHTML = book2.pages;
+                      document.getElementById("txtJavaScriptISBN").innerHTML = book3.isbn;
+                      document.getElementById("txtTheDefinitiveGuide").innerHTML = book3.title;
+                      document.getElementById("txtGuidePages").innerHTML = book3.pages;
+
+                            //Bind the three favorite authors object to Html table .
+                            document.getElementById("txtName").innerHTML = author1.name;
+                      document.getElementById("txtSpiritualGenre").innerHTML = author1.genre;
+                      document.getElementById("txtJonName").innerHTML = author2.name;
+                      document.getElementById("txtScienceFictionGenre").innerHTML = author2.genre;
+                      document.getElementById("txtDavidFlanaganName").innerHTML = author3.name;
+                      document.getElementById("txtFictionGenre").innerHTML = author3.genre;
+                   };
+                           
+                    
+            </script>
+    </div>
+    
+    
+</body>
+</html>
+
+
