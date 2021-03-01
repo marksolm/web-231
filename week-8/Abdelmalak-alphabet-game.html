@@ -1,0 +1,82 @@
+<!-- Title: Abdelmalak-alphabet-game.html
+     Author: Soliman Abdelmalak
+     Date: 02/27/2021
+     Description:Description: This is a page linked to the WEB 231 landing site under the weekly assignments list for  Assignment 8.2.
+-->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <!-- These are the meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning the fundamental concepts of the JavaScript language" />
+    <meta name="keywords" content="CSS, HTML, Web Development, Enterprise JavaScript I" />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="Professor Krasso">
+    <title>WEB 231 – Enterprise JavaScript</title>
+    <!-- this is an internal link for stylesheet. -->
+    <link href="./Abdelmalak-alphabet-game.css" type="text/css" rel="stylesheet">
+    <!-- this is an external link for the google fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </head>
+     <body>
+    <!-- This is the beginning of the body. -->
+    <header>
+     <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+    </header>
+      <!-- This is the main div for form contents. -->
+    <div class="card-title"> 
+      <h2>Alphabet Number Form</h2>
+      <form> 
+        <label>Alphabet Letter Position</label>
+        <input type="text" id="txtPosition" class="input">
+        <br /> <br />
+        <input type="button" onfocus="select()" id="btnFindLetter"  value="Find Letter">
+      </form>
+    </div>
+    <!-- this is an internal link to the landing page index. -->
+    <div> <a id="return-home" href="../index.html">Return</a></div>
+      <!-- This is the Alphabet div that contains the card-title and card-content and all Letters will display init.  -->
+    <div class= "alphabet">
+      <div class="card-title">Letters in the Alphabet
+        <div class="card-content" id="allLetters"></div>
+      </div>
+    </div>
+       <!-- This is the Results class="card-content for alphabetOutput string". -->
+    <div class= "alphabet">
+      <div class="card-title" id="result">Results
+          <div class="card-content" id="alphabet-letter"></div>
+      </div>
+    </div>
+         <!-- this is the beginning of Javascript  -->
+        <script>
+          // button.addEventListener(click);
+           document.getElementById("btnFindLetter").addEventListener("click", alphabetGame);
+           //array of all the letters in English alphabet 
+          const alphabet = [, "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+           //alphabetOutput for the output into empty string. 
+          let alphabetOutput  = "";
+          //for/in loop, iterate over the alphabet array.
+          for (let key in alphabet) {
+            alphabetOutput += alphabet[key] + ', ';
+          }
+          //Binding the alphabetOutput string to the alphabet div and Use JavaScript’s slice() to remove commas.
+               document.getElementById("allLetters").innerHTML = alphabetOutput.slice(0, -2);
+          function alphabetGame() {
+            //Capture the entered value and binding it to a pos variable  
+            const pos = document.getElementById("txtPosition").value;
+           //Assigned a variable named letter .
+            const letter = alphabet[pos];
+            // Using an if…else statement, comparing letter against the JavaScript keyword undefined
+             if (letter == undefined) {
+                 //binding the string value “There are not <pos> letters in the alphabet” to the alphabet-letter div.
+                document.getElementById("alphabet-letter").innerHTML = "There are not " + pos + " letters in the alphabet"
+              }else{
+               //binding the string value “<letter> is at position <pos> in the alphabet” to the alphabet-letter div
+               document.getElementById("alphabet-letter").innerHTML = letter + " at position " + pos + " in the alphabet"
+              }
+          }
+           
+        </script>
+</body>
+</html>

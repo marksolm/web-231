@@ -1,0 +1,103 @@
+/**
+Title: Abdelmalak-alphabet-game.css
+Author: Soliman Abdelmalak
+Date: 02/27/2021
+Description: Styling for the Abdelmalak-alphabet-game.html file
+*/
+ /**
+ HTML and the body font-family set to the  Google font.
+ */
+ body{
+    font-family:'Oswald',Verdana, Arial, sans-serif; 
+    font-size: 28px;margin-left: 10%;
+ }
+
+ /**
+  These are the Setup of the anchor tags.
+ */
+#return-home{
+   color: #4f3674;
+   text-decoration: none;
+   margin-left: 200px;
+} 
+/**
+ These are the Set of the anchor tag’s hover
+*/
+ #return-home:hover{
+    background-color: #d6a800;
+    color: #4f3674;
+ } 
+/**
+ This is the color for label,  #alphabet-letter, and #card-title. 
+*/
+ label, #card-title, #alphabet-letter{
+   color:black;
+   font-size: 30px;
+ }
+ /**
+ This is the color for all alphabet letters,#allLetters. 
+*/
+ #allLetters{
+   color:black;
+   font-size: 39px;
+ }
+ /**
+ This is the setup for the .card-title
+ */
+.card-title{
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0.2);
+   color: #3c275a;
+   padding: 1px;
+   display: inline-grid;
+   grid-template-columns: auto;
+   width: 60%;
+   margin-bottom: 50px;
+   text-align: left;
+   margin-left: 15%;
+   padding: 40px;
+   text-align: center;  
+  font-size: 42px; 
+}
+
+  /**
+   This is the setup  for h1.
+  */
+.app-header{
+   font-weight: 500;
+   text-align: center;
+}
+  
+   /**
+    This is the setup  for the input button.
+   */
+#btnFindLetter{
+   border: none;
+   background-color: #4F3674;
+   color: white;
+   padding: 15px 32px;
+   height: 65px;
+   width: 85%;
+   font-size: x-large;
+}  
+   /**
+    This is the setup  for the drop down menu.
+   */
+ #txtPosition{
+   padding: 15px 32px;
+   height: 20px;
+   width: 39%;
+   font-size: 16px;
+ } 
+   /**
+    This is the color and text-align styling for h2.
+   */ 
+h2{
+  color: #4f3674;
+  text-align:center;
+  font-size: 38px;
+}
+
+          
+          
+          
+        
