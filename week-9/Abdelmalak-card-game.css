@@ -1,0 +1,86 @@
+/**
+Title: Abdelmalak-card-game.css
+Author: Soliman Abdelmalak
+Date: 03/05/2021
+Description: Styling for the Abdelmalak-card-game.html file
+*/
+ /**
+ HTML and the body font-family set to the  Google font.
+ */
+ body{
+    font-family:'Oswald',Verdana, Arial, sans-serif; 
+    margin-left: 10%;
+ }
+
+ /**
+  These are the Setup of the anchor tags.
+ */
+#return-home{
+   color: #4f3674;
+   text-decoration: none;
+   margin-left: 200px;
+   font-size: 22px;
+} 
+/**
+ These are the Set of the anchor tag’s hover
+*/
+ #return-home:hover{
+    background-color: #d6a800;
+    color: #4f3674;
+ } 
+ /**
+ set up of player-card text-align
+*/
+.player-card{
+   text-align: center;
+}
+
+/**
+ The the Set of the anchor tag’s hover
+*/
+ #player-cards {
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+   grid-gap: 10px 10px;
+   padding: 10px;
+}
+ /**
+ This is the setup for the .card-title
+ */
+.card-title{
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0.2);
+   color: #3c275a;
+   display: inline-grid;
+   width: 60%;
+   margin-bottom: 50px;
+   text-align: left;
+   margin-left: 15%;
+   padding: 10px;
+   text-align: center;  
+  font-size: xx-large; 
+}
+  /**
+   This is the setup  for h1.
+  */
+.app-header{
+   font-weight: 700;
+   text-align: center;
+}
+   /**
+    This is the setup  for the input button.
+   */
+#btnDealCards{
+   border: none;
+   background-color: #4F3674;
+   color: white;
+   height: 65px;
+   font-size: x-large;
+}  
+   /**
+    This is the color and text-align styling for h2.
+   */ 
+h2{
+  color: #4f3674;
+  text-align:center;
+  font-size: xx-large;
+}

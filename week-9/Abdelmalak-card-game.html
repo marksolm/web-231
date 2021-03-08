@@ -1,0 +1,124 @@
+<!-- Title: Abdelmalak-card-game.html
+     Author: Soliman Abdelmalak
+     Date: 03/05/2021
+     Description:Description: This is a page linked to the WEB 231 landing site under the weekly assignments list for projects/Final card game.
+-->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <!-- These are the meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning the fundamental concepts of the JavaScript language" />
+    <meta name="keywords" content="CSS, HTML, Web Development, Enterprise JavaScript I" />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="Professor Krasso">
+    <title>WEB 231 – Enterprise JavaScript</title>
+    <!-- this is an internal link for stylesheet. -->
+    <link href="./Abdelmalak-card-game.css" type="text/css" rel="stylesheet">
+    <!-- this is an external link for the google fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!--link to styles for material design icons.-->     
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css" rel="stylesheet">
+  </head>
+     <body>
+    <!-- This is the beginning of the body. -->
+    <header>
+     <h1 class="app-header">Welcome to the Card Game!</h1>
+    </header>
+      <!-- This is the main div for form contents. -->
+    <div class="card-title"> 
+        <h2>Card Dealer</h2>
+        <input type="button"  onfocus="select()" id="btnDealCards"  value="Deal Cards">
+    </div>
+    <!-- this is an internal link to the landing page index. -->
+    <div> <a id="return-home" href="../index.html">Return</a></div>
+  
+       <!-- This is the div card Results,class="card-content". -->
+    <div class= "card">
+      <div class="card-title" id="result">Shuffled Cards.
+          <div class="card-content" id="player-cards"></div>
+      </div>
+    </div>
+       <!-- this is the beginning of Javascript  -->
+    <script>
+         // this is card class with a constructor with parameters for face and suit.
+          class Card {
+            constructor(faces, suits) {
+              this.faces = faces;
+              this.suits = suits;
+            }
+         } 
+         // this is a  Dealer class with a constructor with no parameters.
+      class Dealer {
+        constructor() {
+            this.getDeckOfCards();
+        }
+         
+         // Create a CARD_COUNT variable assign it a default value of 52.  
+           CARD_COUNT = 52;
+         // Create a cards variable assign it a default value of an empty array.  
+           cards = [];
+         // Create a faces variable and assign it a an array of the face of a card deck.  
+           faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+         // Create a suits variable and assign it a an array of the face of a card deck. 
+            suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
+          // Create a getDeckOfCards function.
+            getDeckOfCards() {
+              // for loop with 52 iterations.
+             for(let Count = 0; Count < this.CARD_COUNT; Count++) {
+                  // use the modulus operators by 13, and Math.floor and divide the count by 13.
+                  this.cards[count] = new Card(this.faces[count % 13], this.suits[Math.floor(count / 13)]);
+              }
+           }
+             // Create a shuffle function.
+              shuffle() {
+               // for loop with 52 iterations using CARD_COUNT variable.
+                for( let firstCard = 0; firstCard < this.CARD_COUNT; firstCard++) {
+                     // Random card , create secondCard and tempCard variables ,and record the cards array.
+                     let secondCard = Math.floor((Math.random() * this.CARD_COUNT));
+                     let tempCard = this.cards[firstCard];
+                     this.cards[firstCard] = this.cards[secondCard];
+                     this.cards[secondCard] = tempCard;
+                }
+                   this.cardOutput();
+             }
+             
+             // Create a buildPlayingCard function.
+            buildPlayingCard(card, suitIcon, faceColor, suitColor) {
+               return `<div class="card player-card" style="width:100%">
+                <div class="card-title" style="color: ${faceColor}; "text-align: left; font-size: 20px; padding-left: 10px;">
+                  <div class="card-content" style="font-size:28px; padding-bottom: 25px;">
+                     <span style="color:${suitColor}"class= "${suitIcon}"></span>
+                  </div>
+                </div>`
+           }
+            // Create a cardOutput function.
+            cardOutput() {
+              //create a cardOutPutWithIcon variable that equal empty string.
+              let cardOutPutWithIcon = "";
+              this.cards.forEach((card) =>{
+                //using a switch statement to compare the suit against the strings values:Heart,Diamonds,Cubs,Spades.
+                switch(card.suits) {
+                 case "Hearts":
+                   cardOutPutWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-heart", "red", "red");
+                   break;
+                  case "Diamonds":
+                   cardOutPutWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-diamond", "red", "red");
+                   break;
+                  case "Clubs":
+                   cardOutPutWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-club", "black", "black");
+                   break;
+                  case "Spades":
+                  cardOutPutWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-spade", "black", "black");
+                }
+              });
+               //binding card output to the result div for the player card.
+              document.getElementById("player-cards").innerHTML = cardOutPutWithIcon;
+               new Dealer().shuffle();
+               document.getElementById("player-cards").addEventListener("click", new Dealer().shuffle(), true);
+           }
+       }
+     </script>
+</body>
+</html>
