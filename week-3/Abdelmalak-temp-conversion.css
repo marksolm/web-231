@@ -21,7 +21,7 @@ html,body{
    #return-home{
      color: #4f3674;
      text-decoration: none;
-     text-align: right;
+     float: left;
    } 
    #return-home:hover{
      background-color: #d6a800;
@@ -39,14 +39,15 @@ This is the setup margins for #container.
  }
 #container{
   margin-top: 2%;
-  margin-left: 5%;
+  margin-left: 25%;
   margin-right: 5%;
   padding: 10px;
   bottom: 100px;
+  text-align: center;
 }
 .card{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0.2);
-  width: 100%;
+  width: 70%;
   color: #3c275a;
 }
 /**
@@ -82,15 +83,8 @@ This is the setup margins for #container.
     width: 100%;
   }    
   
-  /**
-  This is the setup  for h1.
-  */
-    .app-header{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0.2);
-    width: 90%;
-    display: inline-grid;
-    grid-template-columns: auto;
-    }
+  
+   
     /**
   This is the height setup  for input.
   */

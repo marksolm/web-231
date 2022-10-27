@@ -23,9 +23,7 @@
   </head>
   <!-- This is the beginning of the body. -->
   <body>
-     <header>
-      <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
-     </header> 
+      <h3 class="app-header">Welcome to the Temperature Conversion App!</h3>
        <!-- This is the main div to the body that giving CSS # container. -->
     <div id="container">
        <div class="card">
@@ -53,17 +51,17 @@
               <p id="card-title"></p>
            </div>
                     <!-- this is the beginning of Javascript  -->
-          <script>
-                  document.getElementById("button").addEventListener("click", convertTemperature);
-                   function convertTemperature() {
-                    const fahrenheit = document.getElementById("textFahrenheit").value;
-                    const converterC = parseFloat(((fahrenheit) - 32) / 1.8).toFixed(2);
-                    document.getElementById("card-title").innerHTML = converterC;
-                 }
-           </script>
-         <br />
+       
          <!-- this is an internal link to the landing page index. -->
          <p> <a id="return-home" href="../index.html">Return</a></p>
+         <script>
+          document.getElementById("button").addEventListener("click", convertTemperature);
+           function convertTemperature() {
+            const fahrenheit = document.getElementById("textFahrenheit").value;
+            const converterC = parseFloat(((fahrenheit) - 32) / 1.8).toFixed(2);
+            document.getElementById("card-title").innerHTML = converterC;
+         }
+   </script>
      </div>
   </body>
 </html>
