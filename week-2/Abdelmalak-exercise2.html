@@ -23,21 +23,24 @@
   </head>
   <!-- This is the beginning of the body. -->
   <body>
-    <h1>Exercise 2.2 - Hello JavaScript</h1>
-    <br />
-    <button id="btnMyCourse" type="button" onclick="myFunction()">what course am I taking!</button>
-    <p id="myP">txtMy World paragraph tag</p>
-      <!-- This is the beginning of the Javascript. -->
+    <div id="container">
+      <h1>Exercise 2.2 - Hello JavaScript</h1>
+      <br />
+      <button id="btnMyCourse" type="button" onclick="myFunction()">what course am I taking!</button>
+      <p id="myP"></p>
+        <!-- This is the beginning of the Javascript. -->
+           <!-- this is an internal link to the landing page index. -->
+           <p> <a class="return-home" href="../index.html">Return</a></p>
+    </div>
+
     <script>
      let myCourse=("what course am I taking?");
       myWorld=("You are now in Abdelmalak's world!");
       function myFunction() {
+        alert("WEB 231 – Enterprise JavaScript I");
        document.getElementById("myP").innerHTML = myWorld;
-       alert("WEB 231 – Enterprise JavaScript I");
       }
     </script>
-         <!-- this is an internal link to the landing page index. -->
-    <p> <a class="return-home" href="../index.html">Return</a></p>
   </body>
 </html>
 
