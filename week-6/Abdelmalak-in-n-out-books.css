@@ -76,7 +76,7 @@ This is the color for label and #card-title.
  This is the setup for the .card-title
  */
 .card-title{
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0.2);
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0.2);/** allow to shadow the div from the page and it look like over the page  */
    color: #3c275a;
    padding: 1px;
    display: inline-grid;

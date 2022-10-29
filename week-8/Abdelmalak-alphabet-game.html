@@ -52,6 +52,15 @@
         <script>
           // button.addEventListener(click);
            document.getElementById("btnFindLetter").addEventListener("click", alphabetGame);
+           /* another way to do it
+            var alphabet = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+           var alphabetOutput = "";
+           for (var i = 0; i < alphabet.length; i++) {
+            alphabetOutput += alphabet[i] + ", ";
+            }
+          //Binding the alphabetOutput string to the alphabet div and Use JavaScript’s slice() to remove commas.
+          document.getElementById("allLetters").innerHTML = alphabetOutput.slice(0, -2);
+           */
            //array of all the letters in English alphabet 
           const alphabet = [, "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
            //alphabetOutput for the output into empty string. 
@@ -65,10 +74,10 @@
           function alphabetGame() {
             //Capture the entered value and binding it to a pos variable  
             const pos = document.getElementById("txtPosition").value;
-           //Assigned a variable named letter .
+           //Set variable letter to user value position in alphabet array.
             const letter = alphabet[pos];
             // Using an if…else statement, comparing letter against the JavaScript keyword undefined
-             if (letter == undefined) {
+             if (pos == undefined) {
                  //binding the string value “There are not <pos> letters in the alphabet” to the alphabet-letter div.
                 document.getElementById("alphabet-letter").innerHTML = "There are not " + pos + " letters in the alphabet"
               }else{

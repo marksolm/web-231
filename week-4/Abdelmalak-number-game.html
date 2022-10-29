@@ -53,34 +53,25 @@
                     // made for correct Guess 
                      var Guess = 1; 
                      function MyGuess() {
-                         if (document.getElementById('btnSubmit').value=="Submit"){
                            // number guessed by user      
                            let myNumber = document.getElementById('textMyNumber').value;
                            /* if guessed number is matching 
                            than actual number*/ 
                            if(myNumber === rnd){
-                                document.getElementById('card-title').innerHTML= "Congratulation! you pick the correct number!";
+                                document.getElementById('card-title').innerHTML = "Congratulation! you pick the correct number!";
                              }  
                                /* if guessed number is greater 
                                than actual number*/  
-                               if(myNumber > rnd){
-                                   Guess++;
+                               else if(myNumber > rnd){
                                     document.getElementById('card-title').innerHTML = ("The number is less than " + myNumber);
                                     /* if guessed number is lesser 
                                     than actual number*/ 
                                  }else{
-                                      Guess++;
                                       document.getElementById('card-title').innerHTML = ("The number is greater than " + myNumber);
                                    }
                              
-                              }else
-                               {
-                               document.getElementById('textMyNumber').focus();
-                               document.getElementById('card-title').innerHTML=" ";
-                               document.getElementById('textMyNumber').innerHTML=" ";
-                               document.getElementById('btnSubmit').value="Submit";
-                          }
-                      } 
+                              
+                     }
                  </script>
    <body>
 </html>
